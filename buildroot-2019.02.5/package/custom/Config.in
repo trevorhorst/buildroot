@@ -1,0 +1,8 @@
+menuconfig BR2_PACKAGE_CONTROLSOFTWARE
+    bool "ControlSoftware"
+    help
+        This option enable support for the beaglebone black control software
+
+if BR2_PACKAGE_CONTROLSOFTWARE
+source "package/custom/ControlSoftware/Config.in"
+endif	
