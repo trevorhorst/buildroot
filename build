@@ -89,7 +89,7 @@ if $RUN_BUILD_TARGET; then
         TARGET_BUILD_DIR=$BASE_DIR"/target-$BUILD_TARGET_ARGUMENT/"
         mkdir -p $TARGET_BUILD_DIR
         cp $CONFIG_TARGET_FILE $TARGET_BUILD_DIR'/'$BUILDROOT_CONFIG_FILENAME
-        ( cd $TARGET_BUILD_DIR && make beaglebone_defconfig O=$TARGET_BUILD_DIR -C $BUILDROOT_DIR )
+        ( cd $TARGET_BUILD_DIR && make O=$TARGET_BUILD_DIR -C $BUILDROOT_DIR )
     else
         echo "File does NOT exist: $CONFIG_TARGET_FILE"
     fi

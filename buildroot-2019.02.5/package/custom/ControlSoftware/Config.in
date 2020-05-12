@@ -28,18 +28,30 @@ config BR2_PACKAGE_CONTROLSOFTWARE_CUSTOM_LOCAL_LOCATION
     depends on BR2_PACKAGE_CONTROLSOFTWARE_CUSTOM_LOCAL
 
 choice
-    prompt "Control Software Tuner Project"
+    prompt "Control Software Project"
 
-    config BR2_PACKAGE_CONTROLSOFTWARE_TUNER_PROJECT_NDREXAMPLE
-    bool "control"
+    config BR2_PACKAGE_CONTROLSOFTWARE_PROJECT_EXAMPLE
+    bool "example"
     help
-        This option builds the ndrExample tuner project
+        This option builds the example control project
+
+    config BR2_PACKAGE_CONTROLSOFTWARE_PROJECT_MLB
+    bool "mlb"
+    help
+        This option builds the mlb project
+
+    config BR2_PACKAGE_CONTROLSOFTWARE_PROJECT_BEAGLEBONEBLACK
+    bool "beagleboneblack"
+    help
+        This option builds the beaglebone black project
 
 endchoice
 
 config BR2_PACKAGE_CONTROLSOFTWARE_PROJECT
     string
-    default "control" if BR2_PACKAGE_CONTROLSOFTWARE_PROJECT_NDREXAMPLE
+    default "example" if BR2_PACKAGE_CONTROLSOFTWARE_PROJECT_EXAMPLE
+    default "mlb" if BR2_PACKAGE_CONTROLSOFTWARE_PROJECT_MLB
+    default "beagleboneblack" if BR2_PACKAGE_CONTROLSOFTWARE_PROJECT_BEAGLEBONEBLACK
 
 config BR2_PACKAGE_CONTROLSOFTWARE_VERSION
     string
