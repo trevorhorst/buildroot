@@ -5,7 +5,9 @@
 #############################################################
 
 CONTROLSOFTWARE_BINARY	= control
+# Retrieve package version from the config options, selects which version to download
 CONTROLSOFTWARE_VERSION = $(call qstrip,$(BR2_PACKAGE_CONTROLSOFTWARE_VERSION))
+# Retrieve package project from the config options, selects which project we want to build
 CONTROLSOFTWARE_PROJECT = $(call qstrip,$(BR2_PACKAGE_CONTROLSOFTWARE_PROJECT))
 
 ifeq ($(BR2_PACKAGE_CONTROLSOFTWARE_CUSTOM_LOCAL),y)
@@ -14,15 +16,13 @@ CONTROLSOFTWARE_SITE = $(call qstrip,$(BR2_PACKAGE_CONTROLSOFTWARE_CUSTOM_LOCAL_
 CONTROLSOFTWARE_SITE_METHOD = local
 else
 # Handler for the git option
-CONTROLSOFTWARE_SITE = https://github.com/trevorhorst/ControlSoftware/archive
-# CONTROLSOFTWARE_SITE = https://github.com/trevorhorst/ControlSoftware.git
-CONTROLSOFTWARE_SOURCE = $(CONTROLSOFTWARE_VERSION).tar.gz
+CONTROLSOFTWARE_SITE = $(call github,trevorhorst,ControlSoftware,$(CONTROLSOFTWARE_VERSION))
 CONTROLSOFTWARE_SITE_METHOD = git 
 endif
 
 CONTROLSOFTWARE_DEPENDENCIES = readline libmicrohttpd libcurl
-# CONTROLSOFTWARE_CONF_ENV = source $(@D)/hardware/$(CONTROLSOFTWARE_PROJECT)/settings.sh
-CONTROLSOFTWARE_CONF_ENV = CONTROL_PROJECT=$(CONTROLSOFTWARE_PROJECT)
+CONTROLSOFTWARE_CONF_ENV = source $(@D)/hardware/$(CONTROLSOFTWARE_PROJECT)/settings.sh
+# CONTROLSOFTWARE_CONF_ENV = CONTROL_PROJECT=$(CONTROLSOFTWARE_PROJECT)
 
 # Some hooks that we may want to use in the future
 # define CONTROLSOFTWARE_CONFIGURE_CMDS
