@@ -1,0 +1,9 @@
+ieee802154
+#cfg80211
+lib80211
+mac80211
+arc4
+rtlwifi
+rtl_usb
+rtl8192c_common
+rtl8192cu
