@@ -1,3 +1,4 @@
+# For EDIMAX WiFi dongle
 ieee802154
 #cfg80211
 lib80211
@@ -7,3 +8,6 @@ rtlwifi
 rtl_usb
 rtl8192c_common
 rtl8192cu
+
+# For the ADC
+ti_am335x_adc
