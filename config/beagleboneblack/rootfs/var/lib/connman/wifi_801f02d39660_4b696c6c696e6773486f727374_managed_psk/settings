@@ -1,0 +1,11 @@
+[wifi_801f02d39660_4b696c6c696e6773486f727374_managed_psk]
+Name=KillingsHorst
+SSID=4b696c6c696e6773486f727374
+Frequency=2427
+Favorite=true
+AutoConnect=true
+Modified=2000-01-01T00:09:27.670246Z
+Passphrase=navifawkes
+IPv4.method=dhcp
+IPv6.method=auto
+IPv6.privacy=disabled

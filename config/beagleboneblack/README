@@ -1,0 +1,50 @@
+   0 ls
+   1 ifconfig
+   2 vim /etc/network/interfaces 
+   3 vi /etc/network/interfaces 
+   4 vi /etc/init.d/S40network 
+   5 vi /etc/init.d/S45connman 
+   6 /etc/init.d/S45connman restart
+   7 ifconfig
+   8 ifup -a
+   9 ls /etc/modules 
+  10 vi /etc/modules 
+  11 insmod ieee802154
+  12 insmod /lib32/modules/3.14.79/kernel/net/ieee802154/ieee802154.ko 
+  13 dmesg
+  14 cat /etc/modules 
+  15 insmod /lib32/modules/3.14.79/kernel/net/wireless/lib80211.ko 
+  16 insmod /lib32/modules/3.14.79/kernel/net/mac80211/mac80211.ko 
+  17 insmod /lib32/modules/3.14.79/kernel/crypto/arc4.ko 
+  18 insmod /lib32/modules/3.14.79/kernel/drivers/net/wireless/rtlwifi/rtlwifi.ko 
+  19 insmod /lib32/modules/3.14.79/kernel/drivers/net/wireless/rtl818x/rtl8187/rtl8187.ko 
+  20 insmod /lib32/modules/3.14.79/kernel/drivers/net/wireless/rtlwifi/rtl8192c/rtl8192c-common.ko
+  21 insmod /lib32/modules/3.14.79/kernel/drivers/net/wireless/rtlwifi/rtl8192cu/rtl8192cu.ko 
+  22 ifup -a
+  23 ifconfig
+  24 /etc/init.d/S45connman restart
+  25 conmand
+  26 connmand
+  27 connmand --help
+  28 connmanctl 
+  29 lsmod
+  30 connmanctl 
+  31 wifi
+  32 ifconfig
+  33 ping google.com
+  34 ping 192.168.1.1
+  35 ping 192.168.1.2
+  36 ping 192.168.1.4
+  37 ping 192.168.1.5
+  38 ping 64.233.185.101
+  39 history
+
+
+  FROM WITHIN CONNMANCTL
+  enable wifi
+  scan wifi     
+  services      // Lists the available wifi networks
+  agent on
+  connect <selected network>
+
+

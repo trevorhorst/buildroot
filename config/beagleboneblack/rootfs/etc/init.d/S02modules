@@ -25,7 +25,7 @@ case "${1}" in
             egrep -qv '^($|#)' /etc/modules ||
             exit 0
 
-        boot_mesg -n "Loading modules:" ${INFO}
+        # echo "Loading modules:" ${INFO}
 
         # Only try to load modules if the user has actually given us
         # some modules to load.
@@ -43,22 +43,23 @@ case "${1}" in
             # Print the module name if successful,
             # otherwise take note.
             if [ $? -eq 0 ]; then
-                boot_mesg -n " ${module}" ${NORMAL}
+                :
+                # echo " ${module}" ${NORMAL}
             else
                 failedmod="${failedmod} ${module}"
             fi
         done < /etc/modules
 
-        boot_mesg "" ${NORMAL}
+        # echo "" ${NORMAL}
         # Print a message about successfully loaded
         # modules on the correct line.
-        echo_ok
+        # echo_ok
 
         # Print a failure message with a list of any
         # modules that may have failed to load.     
         if [ -n "${failedmod}" ]; then              
-            boot_mesg "Failed to load modules:${failedmod}" ${FAILURE}
-            echo_failure                                              
+            echo "Failed to load modules:${failedmod}" ${FAILURE}
+            # echo_failure                                              
         fi                                                            
         ;;                                          
     *)                                                                
